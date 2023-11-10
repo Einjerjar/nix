@@ -1,7 +1,6 @@
 {
   imports = [
-    ./git.nix
-    ./git-public.nix
+    ./git
     ./starship.nix
     ./fish.nix
     ./tmux.nix
