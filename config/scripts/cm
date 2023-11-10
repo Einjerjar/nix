@@ -18,7 +18,7 @@ test -n "$SCOPE" && SCOPE="($SCOPE)"
 _TYPE=$(gum style --foreground 212 "$TYPE")
 _SCOPE=$(gum style --foreground 209 "$SCOPE")
 
-SUMMARY=$(gum input --prompt "$_TYPE $_SCOPE: " --placeholder 'summary') || exit
+SUMMARY=$(gum input --prompt "$_TYPE$_SCOPE: " --placeholder 'summary') || exit
 DESCRIPTION=$(gum input --placeholder 'description') || exit
 
 _SUMMARY=$(gum style --foreground 122 "$SUMMARY")
@@ -33,4 +33,4 @@ if [[ -z "$DESCRIPTION" ]]; then
   echo
 fi
 
-gum confirm 'Commit?' && git commit -m "$TYPE $SCOPE: $SUMMARY" -m "$DESCRIPTION"
+gum confirm 'Commit?' && git commit -m "$TYPE$SCOPE: $SUMMARY" -m "$DESCRIPTION"

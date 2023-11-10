@@ -1,2 +1,2 @@
 apps/git/git.nix
-config/fish/conf.d/plugins-tmux.fish.fish
+config/fish/conf.d/plugin-tmux.fish.fish
