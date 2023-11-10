@@ -1,0 +1,23 @@
+{
+  programs.git = {
+    extraConfig = {
+      user = {
+        name = "personal";
+        email = "personal@mail.com";
+      };
+    };
+
+    includes = [
+      {
+        contents = {
+          user = {
+            name = "work";
+            email = "work@company.com";
+          };
+        };
+
+        condition = "gitdir:~/work/";
+      }
+    ];
+  };
+}
