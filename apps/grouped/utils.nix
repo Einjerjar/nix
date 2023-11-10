@@ -15,5 +15,7 @@ in {
     
     pkgs.gnupg
     pkgs.tree
+
+    pkgs.glow
   ];
 }
