@@ -19,7 +19,7 @@ in {
         diffFilter = "delta --color-only";
       };
       core = {
-        page = "delta";
+        pager = "delta";
         editor = "nvim";
       };
       merge = {

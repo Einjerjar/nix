@@ -57,6 +57,10 @@
     XDG_RUNTIME_DIR = "/run/user/$(id -u)";
   };
 
+  home.sessionPath = [
+    "/home/$(whoami)/.scripts"
+  ];
+
   programs.home-manager.enable = true;
 
   imports = [

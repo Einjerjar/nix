@@ -4,6 +4,8 @@ ln -s ~/.config/home-manager/config/nvim/ ~/.config/nvim
 ln -s ~/.config/home-manager/config/tmux/ ~/.config/tmux/config
 ln -s ~/.config/home-manager/config/tmux/tmux.conf ~/.tmux.conf
 
+ln -s ~/.config/home-manager/config/scripts ~/.scripts
+
 ln -s ~/.config/home-manager/config/fish/completions/ ~/.config/fish/completions
 ln -s ~/.config/home-manager/config/fish/conf.d/ ~/.config/fish/conf.d
 ln -s ~/.config/home-manager/config/fish/functions/ ~/.config/fish/funcions

@@ -17,5 +17,6 @@ in {
     pkgs.tree
 
     pkgs.glow
+    pkgs.gum
   ];
 }
