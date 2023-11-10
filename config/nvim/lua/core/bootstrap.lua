@@ -30,11 +30,9 @@ M.lazy = function(install_path)
     {
       { import = 'plugins' },
       { import = 'plugins.lsp' },
---      { import = 'plugins.lsp.ft' },
       { import = 'plugins.editor' },
-      { import = 'plugins.tools' },
       { import = 'plugins.navigation' },
---      { import = 'plugins.lang' },
+      { import = 'plugins.tools' },
     },
   }, require('plugins.config.lazy'))
 end

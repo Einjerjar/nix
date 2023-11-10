@@ -59,6 +59,7 @@
 
   home.sessionPath = [
     "/home/$(whoami)/.scripts"
+    "/home/$(whoami)/.bun/bin"
   ];
 
   programs.home-manager.enable = true;

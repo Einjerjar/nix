@@ -36,6 +36,7 @@ M.core = {
 
     [l 'fl'] = { vim.lsp.buf.format, 'Clear search highlight' },
     ['gj'] = { vim.lsp.buf.signature_help, 'Signature help' },
+    ['K'] = { vim.lsp.buf.hover, 'Hover' },
     -- ['ca'] = { vim.lsp.buf.code_action, 'Code action' },
 
     ['E'] = { cmd '+10', 'Scroll down' },
