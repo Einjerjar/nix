@@ -15,21 +15,28 @@ in {
     <nixos-wsl/modules>
   ];
 
+  # nixos-wsl config
   wsl.enable = true;
   wsl.defaultUser = user;
+  # disable windows path to avoid slow autocompletes
   wsl.wslConf.interop.appendWindowsPath = false;
 
+  # use fish as default shell
   programs.fish.enable = true;
+  users.users.nixos.shell = pkgs.fish;
 
-  # virtualisation.docker.enable = true;
+  # enable rootless docker
   virtualisation.docker.rootless = {
     enable = true;
     setSocketVariable = true;
   };
 
-  users.users.nixos.shell = pkgs.fish;
+  # add user to docker group anyways despite being rootless
   users.users.nixos.extraGroups = [ "docker" ];
 
+  # enable flakes, had to use to allow for 
+  #  https://github.com/nix-community/neovim-nightly-overlay
+  #  to work properly with home-manager
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = ''
@@ -37,12 +44,15 @@ in {
     '';
   };
 
+  # allow ports for docker and stuff
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 80 443 ];
     allowedUDPPorts = [ 80 443 ];
   };
 
+  # allows linger, required for rootless docker
+  # https://www.reddit.com/r/NixOS/comments/y1brcg/comment/irx83pm/?utm_source=share&utm_medium=web2x&context=3
   systemd.services.linger = {
     enable = true;
 
