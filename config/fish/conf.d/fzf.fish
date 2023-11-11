@@ -45,4 +45,3 @@ set -Ux FZF_DEFAULT_OPTS "$FZF_MOVEMENT $FZF_WINOPTS $FZF_PREVIEW $FZF_PROMPT $F
 
 alias ff="fzf-tmux -p --info hidden"
 alias fh="fzf-tmux -p"
-alias fi="cat $DOTFILES/icons/all.txt | ff --info hidden | awk '{printf \$1;}' | xclip -sel clip"

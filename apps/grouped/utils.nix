@@ -4,6 +4,7 @@ in {
   home.packages = [
     pkgs.curl
     pkgs.wget
+    pkgs.unzip
 
     pkgs.wslu
     pkgs.xdg-utils

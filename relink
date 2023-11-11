@@ -3,6 +3,7 @@
 ln -s ~/.config/home-manager/config/nvim/ ~/.config/nvim
 ln -s ~/.config/home-manager/config/tmux/ ~/.config/tmux/config
 ln -s ~/.config/home-manager/config/tmux/tmux.conf ~/.tmux.conf
+ln -s ~/.config/home-manager/config/alacritty ~/.config/alacritty
 
 ln -s ~/.config/home-manager/config/scripts ~/.scripts
 

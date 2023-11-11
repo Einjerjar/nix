@@ -8,13 +8,15 @@ local lspconfig = require 'lspconfig'
 local servers = {
   'html',
   'cssls',
-  'tsserver',
-  'eslint',
-  'emmet_language_server',
-  'lemminx',
   'gopls',
+  'eslint',
+  'jsonls',
   'svelte',
+  'lemminx',
+  'marksman',
+  'tsserver',
   'tailwindcss',
+  'emmet_language_server',
 }
 local _extends = vim.api.nvim_get_runtime_file('lua/plugins/conf/lsp/extends/*.lua', true)
 local _extend_rename = {}

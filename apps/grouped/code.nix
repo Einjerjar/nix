@@ -4,20 +4,23 @@ in {
   home.packages = [
     pkgs.neovim
     pkgs.codeium
+    pkgs.nodejs_21
+    pkgs.nodePackages_latest.pnpm
 
     # lsp
     pkgs.gopls
     pkgs.emmet-ls
-    pkgs.tailwindcss
+    pkgs.marksman                       # markdown
     pkgs.lua-language-server
-    pkgs.vscode-langservers-extracted
+    pkgs.tailwindcss-language-server
+    pkgs.vscode-langservers-extracted   # html, css, js
 
     pkgs.nodePackages_latest.pyright
     pkgs.nodePackages_latest.svelte-language-server
     pkgs.nodePackages_latest.typescript-language-server
 
     # linters
-    pkgs.selene
+    pkgs.selene                         # lua
     pkgs.nodePackages_latest.eslint
 
     # formatters
@@ -25,5 +28,6 @@ in {
     pkgs.gofumpt
     pkgs.gotools
     pkgs.golines
+    pkgs.nodePackages_latest.prettier   # html, css, js+
   ];
 }

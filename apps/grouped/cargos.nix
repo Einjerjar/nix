@@ -1,6 +1,8 @@
 let
   pkgs = import <nixpkgs> {};
 in {
+  # ended up on its own file, since this are the stuff
+  #  I usually cargo quickinstall
   home.packages = [
     pkgs.fd
     pkgs.bat

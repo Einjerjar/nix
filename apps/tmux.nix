@@ -1,6 +1,7 @@
 with import <nixpkgs> {};
 
 let
+  # switch between named sessions based on directory
   t = tmuxPlugins.mkTmuxPlugin {
     pluginName = "t";
     rtpFilePath = "t-smart-tmux-session-manager.tmux";
@@ -16,19 +17,22 @@ in {
   programs.tmux = {
     enable = true;
     clock24 = true;
+
     plugins = [
-      tmuxPlugins.better-mouse-mode
-      tmuxPlugins.vim-tmux-navigator
+      tmuxPlugins.better-mouse-mode   # sounded cool on paper, but idk
+      tmuxPlugins.vim-tmux-navigator  # make life less painful
       tmuxPlugins.mode-indicator
       tmuxPlugins.sensible
       t
     ];
 
+    # source our custom configs
     extraConfig = ''
       source-file ~/.config/tmux/config/_init.tmux.conf
     '';
   };
 
+  # doesn't get added by default, not sure why
   programs.fish.interactiveShellInit = ''
     fish_add_path ${t}/share/tmux-plugins/t/bin/
   '';

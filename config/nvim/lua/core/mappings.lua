@@ -55,8 +55,8 @@ M.core = {
     [l 'sd'] = { cmd 'bd', 'Delete buffer' },
     [l 'sD'] = { cmd 'bd!', 'Force delete buffer' },
 
-    [l 'fi'] = { call_picker '$DOTFILES/icons/all.txt', 'Copy icon' },
-    [l 'fj'] = { call_picker '$DOTFILES/icons/emoji.txt', 'Copy emoji' },
+    -- [l 'fi'] = { call_picker '$DOTFILES/icons/all.txt', 'Copy icon' },
+    -- [l 'fj'] = { call_picker '$DOTFILES/icons/emoji.txt', 'Copy emoji' },
 
     ['='] = { cmd 'vertical resize +2', 'Make the window bigger vertically' },
     ['-'] = { cmd 'vertical resize -2', 'Make the window smaller vertically' },
