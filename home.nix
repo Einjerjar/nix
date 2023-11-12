@@ -15,8 +15,8 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ./apps
-    ./services
-    ./vars.nix
+    ./home/apps
+    ./home/services
+    ./home/vars.nix
   ];
 }
