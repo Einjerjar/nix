@@ -43,12 +43,15 @@
       "locked": {
         "lastModified": 1699549513,
         "narHash": "sha256-cfsghOs6Cr61wFsxkWonK8AwPwHaRGZ6QkbasUgygh4=",
-        "type": "tarball",
-        "url": "https://github.com/nix-community/NixOS-WSL/archive/refs/heads/main.tar.gz"
+        "owner": "nix-community",
+        "repo": "NixOS-WSL",
+        "rev": "0e4c17efebff955471f169fffbb7e8cd62ada498",
+        "type": "github"
       },
       "original": {
-        "type": "tarball",
-        "url": "https://github.com/nix-community/NixOS-WSL/archive/refs/heads/main.tar.gz"
+        "owner": "nix-community",
+        "repo": "NixOS-WSL",
+        "type": "github"
       }
     },
     "nixpkgs": {
@@ -69,24 +72,23 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1699596684,
-        "narHash": "sha256-XSXP8zjBZJBVvpNb2WmY0eW8O2ce+sVyj1T0/iBRIvg=",
+        "lastModified": 1699099776,
+        "narHash": "sha256-X09iKJ27mGsGambGfkKzqvw5esP1L/Rf8H3u3fCqIiU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "da4024d0ead5d7820f6bd15147d3fe2a0c0cec73",
+        "rev": "85f1ba3e51676fa8cc604a3d863d729026a6b8eb",
         "type": "github"
       },
       "original": {
         "id": "nixpkgs",
-        "ref": "nixos-23.05",
+        "ref": "nixos-unstable",
         "type": "indirect"
       }
     },
     "root": {
       "inputs": {
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs": "nixpkgs_2",
-        "unstable": "unstable"
+        "nixpkgs": "nixpkgs_2"
       }
     },
     "systems": {
@@ -102,21 +104,6 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
-      }
-    },
-    "unstable": {
-      "locked": {
-        "lastModified": 1699099776,
-        "narHash": "sha256-X09iKJ27mGsGambGfkKzqvw5esP1L/Rf8H3u3fCqIiU=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "85f1ba3e51676fa8cc604a3d863d729026a6b8eb",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-unstable",
-        "type": "indirect"
       }
     }
   },
