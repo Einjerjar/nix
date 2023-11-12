@@ -9,7 +9,7 @@
 
   outputs = { self, nixpkgs, unstable, ... }:
     let
-      lib = unstable.lib;
+      lib = nixpkgs.lib;
     in {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
