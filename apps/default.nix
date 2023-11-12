@@ -1,10 +1,13 @@
 {
   imports = [
     ./git
-    ./starship.nix
-    ./fish.nix
-    ./nvim.nix
-    ./tmux.nix
     ./grouped
+
+    ./fish.nix
+    ./i3.nix
+    ./notify.nix
+    ./nvim.nix
+    ./starship.nix
+    ./tmux.nix
   ];
 }

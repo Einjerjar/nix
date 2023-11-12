@@ -1,0 +1,4 @@
+theme = "Beryllium2"
+long_shell = false
+
+show = ["Host", "Distribution", "Terminal", "Shell", "Uptime"]

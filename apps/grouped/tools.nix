@@ -1,7 +1,7 @@
-let
-  pkgs = import <nixpkgs> {};
-in {
+{pkgs, ...}:
+{
   home.packages = [
+    # should prolly move this to code.nix
     pkgs.pocketbase
   ];
 }

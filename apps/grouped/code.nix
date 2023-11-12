@@ -1,6 +1,5 @@
-let
-  pkgs = import <nixpkgs> {};
-in {
+{pkgs, ...}:
+{
   home.packages = [
     pkgs.neovim
     pkgs.codeium

@@ -1,2 +1,3 @@
 apps/git/git.nix
 config/fish/conf.d/plugin-tmux.fish.fish
+wp

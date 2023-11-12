@@ -4,6 +4,10 @@ ln -s ~/.config/home-manager/config/nvim/ ~/.config/nvim
 ln -s ~/.config/home-manager/config/tmux/ ~/.config/tmux/config
 ln -s ~/.config/home-manager/config/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/.config/home-manager/config/alacritty ~/.config/alacritty
+ln -s ~/.config/home-manager/config/ricemood ~/.config/ricemood
+ln -s ~/.config/home-manager/config/macchina ~/.config/macchina
+ln -s ~/.config/home-manager/config/i3 ~/.config/i3/extra
+ln -s ~/.config/home-manager/config/picom ~/.config/picom/extra
 
 ln -s ~/.config/home-manager/config/scripts ~/.scripts
 

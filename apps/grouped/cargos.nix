@@ -1,6 +1,5 @@
-let
-  pkgs = import <nixpkgs> {};
-in {
+{pkgs, ...}:
+{
   # ended up on its own file, since this are the stuff
   #  I usually cargo quickinstall
   home.packages = [

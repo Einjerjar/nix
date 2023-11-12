@@ -1,11 +1,11 @@
 import:
   - ~/.config/alacritty/wsl_hint.yml
-  - ~/.config/alacritty/theme.yml
+  # - ~/.config/alacritty/theme.yml
 
 window:
   dimensions:
-    columns: 200
-    lines: 50
+   columns: 200
+   lines: 50
 
 font:
   normal:

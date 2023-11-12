@@ -1,5 +1,5 @@
+{pkgs, ...}:
 let
-  pkgs = import <nixpkgs> {};
   lib = pkgs.lib;
   tmux_fish = { 
       name = "tmux.fish";
@@ -14,7 +14,7 @@ in {
   programs.fish = {
     enable = true;
 
-    # override default shell aliases, this overrides this only for fish
+    # override default shell aliases, this overrides this only for the fish shell
     #  and allows us to not have to deal with configuration.nix
     shellAliases = {
       l = "lsd -lah";

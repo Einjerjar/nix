@@ -1,6 +1,5 @@
-let
-  pkgs = import <nixpkgs> {};
-in {
+{pkgs, ...}:
+{
   services.pass-secret-service = {
     enable = true;
   };

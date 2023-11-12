@@ -1,15 +1,15 @@
-let
-  pkgs = import <nixpkgs> {};
-in {
+{pkgs, ...}:
+{
   home.packages = [
     pkgs.curl
     pkgs.wget
     pkgs.unzip
 
-    pkgs.wslu
-    pkgs.xdg-utils
     pkgs.fzf
     pkgs.grc
+    pkgs.wslu
+    pkgs.direnv
+    pkgs.xdg-utils
 
     pkgs.htop
     pkgs.xclip
@@ -19,5 +19,6 @@ in {
 
     pkgs.glow
     pkgs.gum
+    pkgs.feh
   ];
 }

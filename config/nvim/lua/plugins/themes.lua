@@ -58,6 +58,11 @@ vim.api.nvim_create_autocmd('User', {
 -- themes
 return {
   {
+    'rebelot/kanagawa.nvim',
+    lazy = false,
+    priority = 1000,
+  },
+  {
     'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000,
