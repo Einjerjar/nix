@@ -1,8 +1,4 @@
 {
-  # allow ports for docker and stuff
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 80 443 ];
-    allowedUDPPorts = [ 80 443 ];
-  };
+  # allow port 80 for docker stuff
+  boot.kernel.sysctl."net.ipv4.ip_unprivileged_port_start" = 80;
 }
