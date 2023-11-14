@@ -4,8 +4,8 @@
     ./docker.nix
     ./firewall.nix
     ./opengl.nix
+    ./openssh.nix
     ./shell.nix
-    # ./wayland.nix
     ./xorg.nix
 
     (import ./user.nix { user = user; })

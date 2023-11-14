@@ -38,5 +38,6 @@ in {
     "/home/$(whoami)/.scripts"
     "/home/$(whoami)/.bun/bin"
     "/home/$(whoami)/ein/go/bin"
+    "/home/$(whoami)/ein/.local/bin"
   ];
 }

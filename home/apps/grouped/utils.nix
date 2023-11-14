@@ -20,5 +20,6 @@
     pkgs.glow
     pkgs.gum
     pkgs.feh
+    pkgs.yq
   ];
 }
