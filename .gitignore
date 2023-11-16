@@ -1,3 +1,3 @@
-**/git.nix
-**/plugin-tmux.fish.fish
+**/**/git.nix
+**/**/plugin-tmux.fish.fish
 wp
