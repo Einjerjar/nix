@@ -1,0 +1,3 @@
+#!/usr/bin/env fish
+
+cat ~/.config/home-manager/config/scripts/icons/all.txt | ff | awk '{printf $1;}' | xclip -sel clip

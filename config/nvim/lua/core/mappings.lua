@@ -57,6 +57,7 @@ M.core = {
 
     -- [l 'fi'] = { call_picker '$DOTFILES/icons/all.txt', 'Copy icon' },
     -- [l 'fj'] = { call_picker '$DOTFILES/icons/emoji.txt', 'Copy emoji' },
+    [l 'fi'] = { cmd 'silent !fish -c fi', 'Copy icon' },
 
     ['='] = { cmd 'vertical resize +2', 'Make the window bigger vertically' },
     ['-'] = { cmd 'vertical resize -2', 'Make the window smaller vertically' },

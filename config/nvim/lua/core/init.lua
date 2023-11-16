@@ -52,6 +52,11 @@ o.undofile = true
 o.updatetime = 250
 o.whichwrap:append '<>[]hl'
 
+o.cmdheight = 0
+
+o.list = true
+o.listchars:append 'trail:·,precedes:←,extends:→'
+
 -- ---------------
 
 o.foldcolumn = '0'

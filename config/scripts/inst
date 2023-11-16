@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+TARGET=$(realpath "$1")
+INSTALL_NAME=$2
+INSTALL_PATH=$3
+
+if [ -z "$INSTALL_NAME" ]; then
+  # remove path
+  INSTALL_NAME="${TARGET##*/}"
+  # remove extension
+  INSTALL_NAME="${INSTALL_NAME%.*}"
+fi
+
+if [ -z "$INSTALL_PATH" ]; then
+  INSTALL_PATH="$HOME/.local/bin"
+fi
+
+echo "FROM: $TARGET"
+echo "TO:   $INSTALL_NAME"
+
+chmod +x "$TARGET"
+mkdir -p "$INSTALL_PATH"
+ln -s "$TARGET" "$INSTALL_PATH/$INSTALL_NAME"

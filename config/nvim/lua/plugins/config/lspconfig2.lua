@@ -12,10 +12,11 @@ local servers = {
   'eslint',
   'jsonls',
   'svelte',
-  'lemminx',
+  -- 'lemminx',
   'marksman',
   'tsserver',
   'tailwindcss',
+  'pyright',
   'emmet_language_server',
 }
 local _extends = vim.api.nvim_get_runtime_file('lua/plugins/conf/lsp/extends/*.lua', true)
