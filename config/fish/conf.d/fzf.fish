@@ -43,5 +43,7 @@ set -Ux FZF_PREVIEW "\
 
 set -Ux FZF_DEFAULT_OPTS "$FZF_MOVEMENT $FZF_WINOPTS $FZF_PREVIEW $FZF_PROMPT $FZF_COLORS"
 
+set -Ux FZF_TMUX_OPTS '-p'
+
 alias ff="fzf-tmux -p --info hidden"
 alias fh="fzf-tmux -p"

@@ -31,12 +31,15 @@ M.load_mappings = function(plugin, mapping_opts)
   local opts = vim.tbl_extend('force', default_map_opts, mapping_opts)
 
   local load_mapping = function(ref, modes)
-    -- M.echo('Loading mappings for ' .. ref)
+    if ref:sub(1, 1) == '_' then
+      return
+    end
+
     if plugin ~= '' and modes.plugin == false then
       return
     end
 
-    if modes.plugin and ref ~= plugin then
+    if modes.plugin == true and ref ~= plugin then
       return
     end
 

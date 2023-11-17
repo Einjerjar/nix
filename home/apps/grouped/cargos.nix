@@ -6,6 +6,7 @@
     pkgs.fd
     pkgs.bat
     pkgs.lsd
+    pkgs.ouch
     pkgs.vivid
     pkgs.delta
     pkgs.zoxide

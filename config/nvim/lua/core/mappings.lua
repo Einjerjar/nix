@@ -16,6 +16,23 @@ local call_picker = function(p)
   return cmd('silent !fish -c "cat ' .. p .. " | ff --info hidden | awk '{printf \\$1;}' | xclip -sel clip\"")
 end
 
+-- utils
+
+M.__utils = {
+  plugin = false
+}
+
+-- set default state here
+local vtext = true
+
+M.__utils.toggle_vtext = function(val)
+  vtext = val ~= nil and val or not vtext
+
+  vim.diagnostic.config({
+    virtual_text = vtext,
+  })
+end
+
 M.core = {
   i = {
     ['jk'] = { '<Esc>', 'Leave insert mode' },
@@ -31,6 +48,7 @@ M.core = {
     ['<C-s>'] = { cmd 'w', 'Save' },
   },
   n = {
+    [l 'di'] = { function() M.__utils.toggle_vtext() end, 'Toggle Virtual text' },
     ['<Esc>'] = { cmd 'noh', 'Clear search highlight' },
     [l 'nk'] = { cmd 'noh', 'Clear search highlight' },
 

@@ -55,7 +55,7 @@ o.whichwrap:append '<>[]hl'
 o.cmdheight = 0
 
 o.list = true
-o.listchars:append 'trail:·,precedes:←,extends:→'
+o.listchars:append 'trail:·,precedes:←,extends:→,tab:· '
 
 -- ---------------
 
@@ -69,6 +69,3 @@ o.foldenable = true
 for _, provider in ipairs { 'node', 'perl', 'python3', 'ruby' } do
   vim.g['loaded_' .. provider .. '_provider'] = 0
 end
-
--- local is_windows = vim.loop.os_uname().sysname == 'Windows_NT'
--- vim.env.PATH = vim.fn.stdpath 'data' .. '/mason/bin' .. (is_windows and ';' or ':') .. vim.env.PATH

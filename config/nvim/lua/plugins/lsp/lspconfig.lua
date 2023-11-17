@@ -28,7 +28,7 @@ return {
       'emmet_language_server',
     }
 
-    require('lspconfig').lua_ls.setup {
+    ls.lua_ls.setup {
       settings = {
         Lua = {
           diagnostics = {

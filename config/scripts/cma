@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+read -r -d "\n" TYPES <<- EOF
+FIX
+REF
+ADD
+REM
+REV
+MOV
+REL
+IMP
+OPT
+TEST
+DOC
+CONFIG
+STYLE
+DEP
+SEC
+CI
+WIP
+MISC
+EOF
+
+TYPE=$(echo -e "$TYPES" | gum filter --no-strict) || exit
+TYPE=${TYPE^^}
+SCOPE=$(gum input --placeholder 'scope') || exit
+
+TYPE="[$TYPE]"
+
+__SCOPE="$SCOPE"
+test -n "$SCOPE" && SCOPE="$SCOPE"
+
+_TYPE=$(gum style --foreground 212 "$TYPE")
+_SCOPE=$(gum style --foreground 209 "$__SCOPE")
+
+SUMMARY=$(gum input --prompt "$_TYPE $_SCOPE: " --placeholder 'summary') || exit
+DESCRIPTION=$(gum input --placeholder 'description') || exit
+
+_SUMMARY=$(gum style --foreground 112 "$SUMMARY")
+_DESCRIPTION=$(gum style --foreground 178 "$DESCRIPTION")
+
+echo
+echo "$_TYPE $_SCOPE: $_SUMMARY"
+echo
+
+if [[ -z "$DESCRIPTION" ]]
+then
+  echo "$_DESCRIPTION"
+  echo
+fi
+
+gum confirm 'Commit?' && \
+  git commit -m "$TYPE $SCOPE: $SUMMARY" -m "$DESCRIPTION" && \
+  echo .
+  # gum confirm 'Push?' && \
+  # git push
+echo

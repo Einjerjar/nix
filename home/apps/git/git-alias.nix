@@ -10,16 +10,15 @@
 
         pu = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)";
         cb = "checkout -b";
-        db = "brancd -d";
+        db = "branch -d";
         mb = "branch -m";
 
-        ls = "log --graph --pretty=format:'%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]'";
-        ll = "log --pretty=format:'%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]' --decorate --numstat";
-        lds = "log --pretty=format:'%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]' --decorate --date=short";
-        ld = "log --pretty=format:'%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]' --decorate --date=relative";
+        ls = "log --graph --pretty=format:'%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]'";
+        ll = "log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]' --decorate --numstat";
+        lds = "log --pretty=format:'%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%cn]' --decorate --date=short";
+        ld = "log --pretty=format:'%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%cn]' --decorate --date=relative";
         le = "log --oneline --decorate";
 
-        
         fl = "log -u";
         dl = "!git ll -1";
         dlc = "diff --cached HEAD^";

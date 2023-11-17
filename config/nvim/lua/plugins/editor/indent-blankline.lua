@@ -1,11 +1,11 @@
 local highlight = {
-  'CursorColumn',
+  'ColorColumn',
   'Whitespace',
 }
 
 return {
   'lukas-reineke/indent-blankline.nvim',
-  event = { 'LspAttach' },
+  event = { 'VeryLazy' },
   main = 'ibl',
   opts = {
     indent = { highlight = highlight, char = '' },

@@ -1,58 +1,61 @@
+-- helpers --
 local hi = vim.api.nvim_set_hl
 local ln = function(fr, to) hi(0, fr, { link = to }) end
+local gh = function(s) return vim.api.nvim_get_hl(0, { name = s }) end
+local fm = function(i) return string.format('#%06x', i) end
+
+-- cant use var = fun declaration for recursives, sad
+local function resolve_hi(s)
+  local h = gh(s)
+  if h.link ~= nil then return resolve_hi(h.link) end
+  return h
+end
+
+local updateTelescopeColors = function()
+  -- ger colors
+  local prompt = resolve_hi '@string'
+  local result = resolve_hi '@function'
+  local preview = resolve_hi '@keyword'
+
+  local t = {
+    prompt = {
+      fg = 'bg',
+      bg = fm(prompt.fg),
+    },
+    result = {
+      fg = 'bg',
+      bg = fm(result.fg),
+    },
+    preview = {
+      fg = 'bg',
+      bg = fm(preview.fg),
+    },
+  }
+
+  -- apply styles to telescopr title
+  hi(0, 'TelescopeTitle', t.prompt)
+  hi(0, 'TelescopePreviewTitle', t.result)
+  hi(0, 'TelescopeResultsTitle', t.preview)
+
+  -- adjust cursorcolumn to match colorcolumn
+  ln('CursorColumn', 'ColorColumn')
+end
 
 vim.api.nvim_create_autocmd('User', {
   pattern = 'VeryLazy',
   callback = function()
-    require('onedark').setup {
-      style = 'darker',
-      code_style = {
-        comments = 'italic',
-        keywords = 'bold',
-        strings = 'italic',
-        functions = 'none',
-        variables = 'italic,bold',
-      }
-      -- transparent = true,
-    }
-    vim.cmd [[ colorscheme onedark ]]
+    vim.cmd [[ colorscheme kanagawa ]]
 
-    local result_bg = '#282c34'
-    local prompt_bg = '#111316'
-    local preview_bg = '#171a1e'
-
-    local prompt_fg = '#8ebd6b'
-    local result_fg = '#4fa6ed'
-    local preview_fg = '#e55561'
-
-    -- require('core.utils').echo('--' .. prompt_bg .. '--')
-
-    hi(0, '__B_PROMPT', { bg = preview_bg })
-    hi(0, '__B_RESULT', { bg = prompt_bg })
-    hi(0, '__B_PREVIEW', { bg = preview_bg })
-
-    hi(0, '__T_PROMPT', { fg = prompt_bg, bg = prompt_fg })
-    hi(0, '__T_RESULT', { fg = prompt_bg, bg = result_fg })
-    hi(0, '__T_PREVIEW', { fg = prompt_bg, bg = preview_fg })
-
-    hi(0, 'IndentBlanklineContextStart', { bg = '#444953' })
-
-    ln('TelescopeTitle', '__T_PROMPT')
-
-    ln('TelescopePromptBorder', '__B_PROMPT')
-    ln('TelescopePromptNormal', '__B_PROMPT')
-
-    ln('TelescopePreviewBorder', '__B_PREVIEW')
-    ln('TelescopePreviewNormal', '__B_PREVIEW')
-    ln('TelescopePreviewTitle', '__T_PREVIEW')
-
-    ln('TelescopeResultsBorder', '__B_RESULT')
-    ln('TelescopeResultsNormal', '__B_RESULT')
-    ln('TelescopeResultsTitle', '__T_RESULT')
-
+    --  show line numbers on telesope preview
     vim.cmd 'autocmd User TelescopePreviewerLoaded setlocal number'
-    vim.cmd 'set mouse=a'
+
+    updateTelescopeColors()
   end,
+})
+
+vim.api.nvim_create_autocmd('ColorScheme', {
+  pattern = '*',
+  callback = updateTelescopeColors,
 })
 
 -- themes

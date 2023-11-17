@@ -1,18 +1,22 @@
 import:
   - ~/.config/alacritty/wsl_hint.yml
-  # - ~/.config/alacritty/theme.yml
+  - ~/.config/alacritty/theme.yml
 
 window:
   dimensions:
-   columns: 200
-   lines: 50
+    columns: 200
+    lines: 50
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font Mono
+    # family: JetBrains Mono
+    family: Cartograph Mono CF
     style: Medium
 
-  size: 9
+  bold:
+    style: Heavy
+
+  size: 10
 
   offset:
     x: 0
