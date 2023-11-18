@@ -1,64 +1,46 @@
 -- helpers --
-local hi = vim.api.nvim_set_hl
-local ln = function(fr, to) hi(0, fr, { link = to }) end
-local gh = function(s) return vim.api.nvim_get_hl(0, { name = s }) end
-local fm = function(i) return string.format('#%06x', i) end
+local u = require 'plugins.utils.themes'
 
--- cant use var = fun declaration for recursives, sad
-local function resolve_hi(s)
-  local h = gh(s)
-  if h.link ~= nil then return resolve_hi(h.link) end
-  return h
-end
-
--- modified to take in and return ints
--- https://stackoverflow.com/a/72431176
-local function clamp(component) return math.min(math.max(component, 0), 255) end
-function LightenDarkenColor(num, amt)
-  local r = math.floor(num / 0x10000) + amt
-  local g = (math.floor(num / 0x100) % 0x100) + amt
-  local b = (num % 0x100) + amt
-  return clamp(r) * 0x10000 + clamp(g) * 0x100 + clamp(b)
-end
-
-local updateTelescopeColors = function()
-  -- ger colors
-  local prompt = resolve_hi '@string'
-  local result = resolve_hi '@function'
-  local preview = resolve_hi '@keyword'
-  local normal = resolve_hi('Normal')
+local updateColors = function()
+  -- get colors
+  local prompt = u.find '@string'
+  local result = u.find '@function'
+  local preview = u.find '@keyword'
+  local normal = u.find 'Normal'
 
   local t = {
     prompt = {
       fg = 'bg',
-      bg = fm(prompt.fg),
+      bg = u.fm(prompt.fg),
     },
     result = {
       fg = 'bg',
-      bg = fm(result.fg),
+      bg = u.fm(result.fg),
     },
     preview = {
       fg = 'bg',
-      bg = fm(preview.fg),
+      bg = u.fm(preview.fg),
     },
     normal = {
       -- make the prompt pop out a bit against default bg
-      bg = fm(LightenDarkenColor(normal.bg, -5))
-    }
+      bg = u.fm(u.shift(normal.bg, -5)),
+    },
   }
 
   -- apply styles to telescopr title
-  hi(0, 'TelescopeNormal', t.normal)
-  hi(0, 'TelescopeBorder', t.normal)
-  hi(0, 'TelescopeTitle', t.prompt)
-  hi(0, 'TelescopePreviewTitle', t.result)
-  hi(0, 'TelescopeResultsTitle', t.preview)
+  u.hi(0, 'TelescopeNormal', t.normal)
+  u.hi(0, 'TelescopeBorder', t.normal)
+  u.hi(0, 'TelescopeTitle', t.prompt)
+  u.hi(0, 'TelescopePreviewTitle', t.result)
+  u.hi(0, 'TelescopeResultsTitle', t.preview)
 
   -- for indent-blankline
-  hi(0, 'BGLighter', { bg = fm(LightenDarkenColor(resolve_hi('Normal').bg, 5)) })
+  u.hi(0, 'BGLighter', { bg = u.fm(u.shift(u.find('Normal').bg, 5)) })
 
   -- adjust cursorcolumn to match colorcolumn
-  ln('CursorColumn', 'ColorColumn')
+  u.ln('CursorColumn', 'ColorColumn')
+
+  vim.api.nvim_exec_autocmds('User', { pattern = 'UpdateColors' })
 end
 
 vim.api.nvim_create_autocmd('User', {
@@ -69,13 +51,13 @@ vim.api.nvim_create_autocmd('User', {
     --  show line numbers on telesope preview
     vim.cmd 'autocmd User TelescopePreviewerLoaded setlocal number'
 
-    updateTelescopeColors()
+    updateColors()
   end,
 })
 
 vim.api.nvim_create_autocmd('ColorScheme', {
   pattern = '*',
-  callback = updateTelescopeColors,
+  callback = updateColors,
 })
 
 -- themes

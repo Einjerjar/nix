@@ -12,10 +12,6 @@ local fn = function(k, v)
   return function() return k(unpack(v)) end
 end
 
-local call_picker = function(p)
-  return cmd('silent !fish -c "cat ' .. p .. " | ff --info hidden | awk '{printf \\$1;}' | xclip -sel clip\"")
-end
-
 -- utils
 
 M.__utils = {

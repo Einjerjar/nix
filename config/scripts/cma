@@ -34,7 +34,7 @@ _TYPE=$(gum style --foreground 212 "$TYPE")
 _SCOPE=$(gum style --foreground 209 "$__SCOPE")
 
 SUMMARY=$(gum input --prompt "$_TYPE $_SCOPE: " --placeholder 'summary') || exit
-DESCRIPTION=$(gum input --placeholder 'description') || exit
+DESCRIPTION=$(gum write --placeholder 'description') || exit
 
 _SUMMARY=$(gum style --foreground 112 "$SUMMARY")
 _DESCRIPTION=$(gum style --foreground 178 "$DESCRIPTION")

@@ -15,8 +15,7 @@ let
   '');
 in {
   home.sessionVariables = {
-    # afaik, default wsl bridge ip
-    DISPLAY = "192.168.80.1:0.0";
+    DISPLAY = "172.27.128.1:0.0";
     NIXPKGS_ALLOW_UNFREE = "1";
 
     XDG_RUNTIME_DIR = "/run/user/$(id -u)";

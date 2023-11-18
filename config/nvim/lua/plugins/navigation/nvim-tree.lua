@@ -47,7 +47,7 @@ local options = {
         git = true,
       },
       glyphs = {
-        default = '',
+        default = '',
         symlink = '',
         folder = {
           default = '',

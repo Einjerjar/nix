@@ -1,4 +1,3 @@
-local u = require 'heirline.utils'
 local c = require 'heirline.conditions'
 
 local icons = {
@@ -22,24 +21,28 @@ return {
         local d = self.git_dict
         return icons.branch .. (d.head == nil and 'main' or d.head) .. ' '
       end,
+      hl = 'Normal'
     },
     {
       provider = function(self)
         local d = self.git_dict
         return icons.added .. (d.added == nil and '0' or d.added) .. ' '
       end,
+      hl = 'DiffAdd'
     },
     {
       provider = function(self)
         local d = self.git_dict
         return icons.changed .. (d.changed == nil and '0' or d.changed) .. ' '
       end,
+      hl = 'DiffText'
     },
     {
       provider = function(self)
         local d = self.git_dict
         return icons.removed .. (d.removed == nil and '0' or d.removed) .. ' '
       end,
+      hl = 'DiffDelete'
     },
   },
 }
