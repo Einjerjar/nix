@@ -1,0 +1,25 @@
+{
+  "annotations": {
+    "prefix": "ano",
+    "body": [
+      "from __future__ import annotations$0"
+    ]
+  },
+  "type_checking": {
+    "prefix": "tc",
+    "body": [
+      "from typing import TYPE_CHECKING",
+      "",
+      "if TYPE_CHECKING:",
+      "\tpass"
+    ]
+  },
+  "logger": {
+    "prefix": "log",
+    "body": [
+      "from logging import getLogger",
+      "",
+      "_logger = getLogger(__name__)"
+    ]
+  }
+}

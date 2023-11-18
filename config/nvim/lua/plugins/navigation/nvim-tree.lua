@@ -1,7 +1,6 @@
 local options = {
   filters = {
     dotfiles = false,
-    -- exclude = { vim.fn.stdpath "config" .. "/lua/custom" },
   },
   disable_netrw = true,
   hijack_netrw = true,
@@ -40,26 +39,16 @@ local options = {
     },
 
     icons = {
+      git_placement = 'signcolumn',
       show = {
         file = true,
         folder = true,
         folder_arrow = true,
         git = true,
       },
-
       glyphs = {
         default = '',
         symlink = '',
-        -- folder = {
-        --   default = '',
-        --   empty = '',
-        --   empty_open = '',
-        --   open = '',
-        --   symlink = '',
-        --   symlink_open = '',
-        --   arrow_open = '',
-        --   arrow_closed = '',
-        -- },
         folder = {
           default = '',
           open = '',
@@ -70,23 +59,14 @@ local options = {
           arrow_open = '',
           arrow_closed = ' ',
         },
-        -- git = {
-        --   unstaged = '✗',
-        --   staged = '✓',
-        --   unmerged = '',
-        --   renamed = '➜',
-        --   untracked = '★',
-        --   deleted = '',
-        --   ignored = '◌',
-        -- },
         git = {
           unstaged = '',
           staged = '',
           unmerged = '',
-          renamed = '➜',
+          renamed = '',
           untracked = '',
           deleted = '',
-          ignored = '',
+          ignored = '',
         },
       },
     },

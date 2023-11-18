@@ -1,0 +1,20 @@
+{
+  "e-lazy": {
+    "prefix": "lazy",
+    "body": [
+      "event = 'VeryLazy',"
+    ]
+  },
+  "e-buf": {
+    "prefix": "buf",
+    "body": [
+      "event = { 'BufReadPost', 'BufWinEnter', 'BufNewFile' },"
+    ]
+  },
+  "e-lsp": {
+    "prefix": "lsp",
+    "body": [
+      "event = { 'LspAttach' },"
+    ]
+  }
+}

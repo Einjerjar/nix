@@ -1,5 +1,5 @@
 local highlight = {
-  'ColorColumn',
+  'BGLighter',
   'Whitespace',
 }
 

@@ -4,8 +4,8 @@ import:
 
 window:
   dimensions:
-    columns: 200
-    lines: 50
+    columns: 160
+    lines: 40
 
 font:
   normal:

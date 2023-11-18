@@ -11,11 +11,22 @@ local function resolve_hi(s)
   return h
 end
 
+-- modified to take in and return ints
+-- https://stackoverflow.com/a/72431176
+local function clamp(component) return math.min(math.max(component, 0), 255) end
+function LightenDarkenColor(num, amt)
+  local r = math.floor(num / 0x10000) + amt
+  local g = (math.floor(num / 0x100) % 0x100) + amt
+  local b = (num % 0x100) + amt
+  return clamp(r) * 0x10000 + clamp(g) * 0x100 + clamp(b)
+end
+
 local updateTelescopeColors = function()
   -- ger colors
   local prompt = resolve_hi '@string'
   local result = resolve_hi '@function'
   local preview = resolve_hi '@keyword'
+  local normal = resolve_hi('Normal')
 
   local t = {
     prompt = {
@@ -30,12 +41,21 @@ local updateTelescopeColors = function()
       fg = 'bg',
       bg = fm(preview.fg),
     },
+    normal = {
+      -- make the prompt pop out a bit against default bg
+      bg = fm(LightenDarkenColor(normal.bg, -5))
+    }
   }
 
   -- apply styles to telescopr title
+  hi(0, 'TelescopeNormal', t.normal)
+  hi(0, 'TelescopeBorder', t.normal)
   hi(0, 'TelescopeTitle', t.prompt)
   hi(0, 'TelescopePreviewTitle', t.result)
   hi(0, 'TelescopeResultsTitle', t.preview)
+
+  -- for indent-blankline
+  hi(0, 'BGLighter', { bg = fm(LightenDarkenColor(resolve_hi('Normal').bg, 5)) })
 
   -- adjust cursorcolumn to match colorcolumn
   ln('CursorColumn', 'ColorColumn')

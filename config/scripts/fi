@@ -1,3 +1,5 @@
 #!/usr/bin/env fish
 
-cat ~/.config/home-manager/config/scripts/icons/all.txt | ff | awk '{printf $1;}' | xclip -sel clip
+# new.txt from
+#  https://github.com/chrisgrieser/cmp-nerdfont/blob/main/lua/cmp_nerdfont/items.lua
+cat ~/.config/home-manager/config/scripts/icons/new.txt | ff | awk '{printf $1;}' | xclip -sel clip

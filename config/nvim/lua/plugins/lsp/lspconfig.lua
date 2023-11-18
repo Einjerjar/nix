@@ -28,7 +28,10 @@ return {
       'emmet_language_server',
     }
 
+    local cap = require('cmp_nvim_lsp').default_capabilities()
+
     ls.lua_ls.setup {
+      capabilities = cap,
       settings = {
         Lua = {
           diagnostics = {
@@ -48,7 +51,7 @@ return {
     }
 
     for _, lsp in ipairs(servers) do
-      ls[lsp].setup {}
+      ls[lsp].setup { capabilities = cap }
     end
 
     local _custom = vim.api.nvim_get_runtime_file('lua/plugins/lsp/custom/*.lua', true)
@@ -57,6 +60,7 @@ return {
       local cray = server:gsub('.*lua/', ''):gsub('.lua$', ''):gsub('/', '.')
       local name = cray:gsub('.*%.', '')
       local opts = require(cray)
+      opts.capabilities = cap
 
       lc[name] = {
         default_config = opts
