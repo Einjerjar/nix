@@ -3,8 +3,12 @@ local c = require 'heirline.conditions'
 
 return {
   init = function(self)
-    self.filename = vim.api.nvim_buf_get_name(0)
-    self.file_ro = not vim.bo.modifiable or vim.bo.readonly
+    local pos = vim.api.nvim_win_get_cursor(vim.api.nvim_get_current_win())
+    local lines = vim.api.nvim_buf_line_count(vim.api.nvim_get_current_buf())
+
+    self.cur_x = pos[2]
+    self.cur_y = pos[1]
+    self.scroll = self.cur_y == 1 and 0 or math.floor((self.cur_y / lines) * 100)
   end,
   condition = function(self)
     return not c.buffer_matches {
@@ -13,10 +17,8 @@ return {
   end,
   {
     provider = function(self)
-      local f = vim.fn.fnamemodify(self.filename, ':t')
-      local i = ic.get_icon_by_filetype(vim.bo.filetype)
-      return (self.file_ro and '  ' or ' ') .. (i ~=nil and i .. ' ' or '') .. f .. ' '
+      return '  ' .. self.cur_x .. ' ' .. self.cur_y .. ' 󰹹 ' .. self.scroll .. '%% '
     end,
-    hl = 'TelescopePreviewLine'
+    hl = 'Normal'
   },
 }

@@ -49,6 +49,7 @@ return {
       statusline = {
         require 'plugins.editor.status.mode',
         require 'plugins.editor.status.file',
+        require 'plugins.editor.status.position',
         align,
         require 'plugins.editor.status.recording',
         require 'plugins.editor.status.diag',
