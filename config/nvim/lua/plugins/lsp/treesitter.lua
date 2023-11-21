@@ -33,7 +33,7 @@ local options = {
       keymaps = {
         ['a='] = '@assignment.outer',
         ['i='] = '@assignment.outer',
-        ['l='] = '@assignment.lhs',
+        ['m='] = '@assignment.lhs',
         ['r='] = '@assignment.rhs',
 
         ['aa'] = '@parameter.outer',

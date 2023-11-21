@@ -43,7 +43,9 @@ in {
 
     # linters
     pkgs.selene                         # lua
-    pkgs.nodePackages_latest.eslint
+    pkgs.nodePackages_latest.eslint     # js/ts
+    pkgs.ruff                           # python
+    pkgs.ruff-lsp                       # python
 
     # formatters
     pkgs.stylua

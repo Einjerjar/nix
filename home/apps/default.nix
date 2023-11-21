@@ -9,5 +9,6 @@
     ./nvim.nix
     ./starship.nix
     ./tmux.nix
+    ./pocketbase.nix
   ];
 }

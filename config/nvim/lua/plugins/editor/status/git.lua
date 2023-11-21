@@ -1,7 +1,7 @@
 local c = require 'heirline.conditions'
 
 local icons = {
-  branch = '  ',
+  branch = ' 󰊢 ',
   added = '  ',
   removed = '  ',
   changed = '  ',

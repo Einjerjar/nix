@@ -20,6 +20,7 @@ return {
       'eslint',
       'jsonls',
       'svelte',
+      'ruff_lsp',
       -- 'lemminx',
       'marksman',
       'tsserver',

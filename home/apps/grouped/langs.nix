@@ -3,6 +3,7 @@
   home.packages = [
     pkgs.bun
     pkgs.go
-    pkgs.python313
+    pkgs.python311
+    pkgs.python311Packages.pip
   ];
 }
