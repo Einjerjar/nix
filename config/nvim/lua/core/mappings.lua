@@ -72,6 +72,7 @@ M.core = {
     -- [l 'fi'] = { call_picker '$DOTFILES/icons/all.txt', 'Copy icon' },
     -- [l 'fj'] = { call_picker '$DOTFILES/icons/emoji.txt', 'Copy emoji' },
     [l 'fi'] = { cmd 'silent !fish -c fi', 'Copy icon' },
+    [l 'fp'] = { cmd '!fish -c fp', 'package.json scripts' },
 
     ['='] = { cmd 'vertical resize +2', 'Make the window bigger vertically' },
     ['-'] = { cmd 'vertical resize -2', 'Make the window smaller vertically' },
@@ -190,6 +191,9 @@ M.neogit = {
 -- n
 M.signature = {
   n = {
+    ['<M-p>'] = {function() require('lsp_signature').toggle_float_win() end, 'show signature'}
+  },
+  i = {
     ['<M-p>'] = {function() require('lsp_signature').toggle_float_win() end, 'show signature'}
   }
 }

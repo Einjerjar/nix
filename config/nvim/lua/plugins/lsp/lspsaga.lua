@@ -6,7 +6,10 @@ return {
       -- close_after_jump = true,
     },
     ui = {
-      lines = { '└', '├', '│', '─', '┌' },
+      -- lines = { '└', '├', '│', '─', '┌' },
+      lines = { ' ', ' ', ' ', ' ', ' ' },
+      expand = ' ',
+      collapse = '',
     },
   },
 }

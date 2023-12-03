@@ -1,4 +1,3 @@
-local ic = require('nvim-web-devicons')
 local c = require 'heirline.conditions'
 
 return {

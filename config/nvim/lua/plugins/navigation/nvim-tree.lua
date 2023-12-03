@@ -1,6 +1,7 @@
 local options = {
   filters = {
     dotfiles = false,
+    custom = { '__pycache__', '^\\.git$', '\\.pyc$', '^\\.svelte-kit$' }
   },
   disable_netrw = true,
   hijack_netrw = true,

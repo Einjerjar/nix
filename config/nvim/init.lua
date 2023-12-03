@@ -5,3 +5,6 @@ require('core.bootstrap').lazy(lazypath)
 require('core.utils').load_mappings()
 
 require('core.mappings').__utils.toggle_vtext(false)
+
+vim.opt.laststatus = 3
+vim.opt.cmdheight = 0

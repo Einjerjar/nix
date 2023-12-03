@@ -1,7 +1,5 @@
 return {
-  'Pocco81/auto-save.nvim',
+  'stevearc/aerial.nvim',
   event = { 'BufReadPost', 'BufWinEnter', 'BufNewFile' },
-  opts = {
-    enabled = false
-  }
+  opts = {}
 }

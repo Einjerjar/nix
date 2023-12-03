@@ -53,6 +53,7 @@ in {
     pkgs.gotools
     pkgs.golines
     pkgs.nodePackages_latest.prettier   # html, css, js+
+    pkgs.dprint                         # html, css, js+
     pkgs.black                          # python
     pkgs.isort                          # python
   ];
