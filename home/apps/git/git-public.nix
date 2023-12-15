@@ -7,7 +7,7 @@ in {
     
     extraConfig = {
       credential.helper = "${
-        pkgs.git.override { withLibsecret = true; }
+        pkgs.gitFull
       }/bin/git-credential-libsecret";
       init = {
         defaultBranch = "main";

@@ -4,7 +4,7 @@ import:
 
 window:
   dimensions:
-    columns: 160
+    columns: 200
     lines: 40
 
 font:
@@ -16,7 +16,7 @@ font:
   bold:
     style: Heavy
 
-  size: 9.5
+  size: 8.5
 
   offset:
     x: 0

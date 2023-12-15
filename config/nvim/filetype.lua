@@ -5,10 +5,11 @@ f.add({
     i3c = 'i3config'
   },
   filename = {
-    -- ['.env'] = 'dotenv',
+    ['odoo.conf'] = 'confini',
     -- ['env'] = 'dotenv',
   },
   pattern = {
+    ['[%w_.-]+.tmux.conf'] = 'tmux',
     -- ['%.env%.[%w_.-]+'] = 'dotenv',
   }
 })

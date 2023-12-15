@@ -38,6 +38,8 @@ return {
     local snippetTab = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
+      elseif vim.snippet.jumpable(1) then
+        vim.snippet.jump(1)
       elseif vim.fn['vsnip#jumpable'](1) == 1 then
         vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>(vsnip-jump-next)', true, true, true), '')
       else
@@ -48,6 +50,8 @@ return {
     local snippetSTab = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
+      elseif vim.snippet.jumpable(-1) then
+        vim.snippet.jump(-1)
       elseif vim.fn['vsnip#jumpable'](-1) == 1 then
         vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>(vsnip-jump-prev)', true, true, true), '')
       else
@@ -65,7 +69,10 @@ return {
         end,
       },
       snippet = {
-        expand = function(args) vim.fn['vsnip#anonymous'](args.body) end,
+        expand = function(args)
+          vim.fn['vsnip#anonymous'](args.body)
+          -- vim.snippet.expand(args.body)
+        end,
       },
       window = {
         documentation = bordered,

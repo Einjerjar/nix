@@ -5,6 +5,7 @@ return {
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
     'VonHeikemen/lsp-zero.nvim',
+    'b0o/SchemaStore.nvim',
   },
   config = function()
     local lz = require('lsp-zero').preset {}
@@ -18,7 +19,7 @@ return {
       'cssls',
       'gopls',
       'eslint',
-      'jsonls',
+      -- 'jsonls',
       'svelte',
       'ruff_lsp',
       -- 'lemminx',
@@ -30,6 +31,33 @@ return {
     }
 
     local cap = require('cmp_nvim_lsp').default_capabilities()
+    cap.textDocument.foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true,
+    }
+
+    ls.jsonls.setup {
+      capabilities = cap,
+      settings = {
+        json = {
+          schemas = require('schemastore').json.schemas(),
+          validate = { enable = true },
+        },
+      },
+    }
+
+    ls.yamlls.setup {
+      capabilities = cap,
+      settings = {
+        yaml = {
+          schemaStore = {
+            enable = false,
+            url = '',
+          },
+          schemas = require('schemastore').yaml.schemas(),
+        },
+      },
+    }
 
     ls.lua_ls.setup {
       capabilities = cap,
@@ -64,7 +92,7 @@ return {
       opts.capabilities = cap
 
       lc[name] = {
-        default_config = opts
+        default_config = opts,
       }
 
       ls[name].setup(opts)

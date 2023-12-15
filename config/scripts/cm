@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
 read -r -d "\n" TYPES <<- EOF
-fix
 feat
-docs
+fix
+chore
 style
 refactor
 test
-chore
+docs
+ci
 EOF
 
 TYPE=$(echo -e "$TYPES" | gum filter --no-strict) || exit

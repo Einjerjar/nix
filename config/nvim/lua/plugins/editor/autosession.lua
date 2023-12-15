@@ -2,7 +2,8 @@ local utils = require('core.utils')
 
 local close_ft = {
   'NvimTree',
-  'sagaoutline'
+  'sagaoutline',
+  'minimap'
 }
 
 local close_stuff = function()

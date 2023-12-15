@@ -34,6 +34,7 @@ in {
     pkgs.emmet-ls
     pkgs.marksman                       # markdown
     pkgs.lua-language-server
+    pkgs.yaml-language-server
     pkgs.tailwindcss-language-server
     pkgs.vscode-langservers-extracted   # html, css, js
 

@@ -64,8 +64,8 @@ M.core = {
     ['<A-j>'] = { ':m .+1<CR>==', 'Move line down' },
     ['<A-k>'] = { ':m .-2<CR>==', 'Move line up' },
 
-    [l 's['] = { cmd 'vsplit +enew', 'Split window vertically' },
-    [l 's]'] = { cmd 'split +enew', 'Split window horizontally' },
+    [l 's['] = { cmd 'vsplit', 'Split window vertically' },
+    [l 's]'] = { cmd 'split', 'Split window horizontally' },
     [l 'sd'] = { cmd 'bd', 'Delete buffer' },
     [l 'sD'] = { cmd 'bd!', 'Force delete buffer' },
 
