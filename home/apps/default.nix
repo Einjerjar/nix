@@ -4,7 +4,7 @@
     ./grouped
 
     ./fish.nix
-    ./i3.nix
+    # ./i3.nix
     ./notify.nix
     ./nvim.nix
     ./starship.nix
