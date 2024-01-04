@@ -1,0 +1,26 @@
+import:
+  - ~/.config/alacritty/wsl_hint.yml
+  - ~/.config/alacritty/theme.yml
+
+window:
+  dimensions:
+    columns: 200
+    lines: 40
+
+font:
+  normal:
+    family: JetBrains Mono
+    # family: Cartograph CF
+    style: Light
+
+  bold:
+    style: Heavy
+
+  size: 8.5
+
+  offset:
+    x: 0
+    y: 2
+
+hints:
+  alphabet: "1234567890"

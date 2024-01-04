@@ -27,3 +27,5 @@ alias v='nvim'
 
 alias e.='/mnt/c/Windows/explorer.exe .'
 alias ssh='TERM=xterm-256color /usr/bin/env ssh'
+
+alias np="nix-shell -p"

@@ -19,6 +19,7 @@ return {
       'cssls',
       'gopls',
       'eslint',
+      -- 'biome',
       -- 'jsonls',
       'svelte',
       'ruff_lsp',

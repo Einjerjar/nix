@@ -35,6 +35,8 @@ in {
     '';
   };
 
+  boot.cleanTmpDir = true;
+
   system.stateVersion = "23.05"; # Did you read the comment?
   system.copySystemConfiguration = true;
 }
