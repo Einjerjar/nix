@@ -6,5 +6,8 @@
     pkgs.code-minimap
     pkgs.flyctl
     pkgs.lighttpd
+    pkgs.rconc
+    pkgs.unpaper
+    pkgs.poppler_utils
   ];
 }

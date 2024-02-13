@@ -14,7 +14,7 @@ font:
     style: Light
 
   bold:
-    style: Heavy
+    style: ExtraBold
 
   size: 8.5
 

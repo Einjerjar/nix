@@ -30,7 +30,7 @@ in {
     __EGL_VENDOR_LIBRARY_FILENAMES = "${pkgs.mesa.drivers}/share/glvnd/egl_vendor.d/50_mesa.json";
     LIBGL_DRIVERS_PATH = "${lib.makeSearchPathOutput "lib" "lib/dri" mesa-drivers}";
     LIBVA_DRIVERS_PATH = "${lib.makeSearchPathOutput "out" "lib/dri" (mesa-drivers)}";
-    LD_LIBRARY_PATH = "${mesaPath}:${vdpauPath}:${glxindirect}/lib:${glvndPath}";
+    LD_LIBRARY_PATH = "${mesaPath}:${vdpauPath}:${glxindirect}/lib:${glvndPath}:${pkgs.zlib}/lib";
   };
 
   home.sessionPath = [

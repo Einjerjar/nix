@@ -4,7 +4,12 @@
     pkgs.bun
     pkgs.biome
     pkgs.go
-    pkgs.python311
-    pkgs.python311Packages.pip
+    (pkgs.python311.withPackages (p: with p; [
+      pip
+      numpy
+      matplotlib
+      pillow
+      requests
+    ]))
   ];
 }

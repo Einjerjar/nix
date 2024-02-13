@@ -6,6 +6,7 @@ f.add({
   },
   filename = {
     ['odoo.conf'] = 'confini',
+    ['openerp-server.conf'] = 'confini',
     -- ['env'] = 'dotenv',
   },
   pattern = {

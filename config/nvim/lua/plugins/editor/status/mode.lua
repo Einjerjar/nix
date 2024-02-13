@@ -7,7 +7,7 @@ local updateColors = function()
   u.hi(0, 'SLInsert', { fg = 'bg', bg = u.fm(u.find('@string').fg)})
   u.hi(0, 'SLVisual', { fg = 'bg', bg = u.fm(u.find('@label').fg)})
   u.hi(0, 'SLReplace', { fg = 'bg', bg = u.fm(u.find('@number').fg)})
-  u.hi(0, 'SLTerm', { fg = 'bg', bg = u.fm(u.find('@field').fg)})
+  u.hi(0, 'SLTerm', { fg = 'bg', bg = u.fm(u.find('@variable').fg)})
 end
 
 vim.api.nvim_create_autocmd('User', {

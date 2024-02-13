@@ -17,11 +17,12 @@ in {
     enable = true;
     clock24 = true;
 
-    plugins = [
-      pkgs.tmuxPlugins.better-mouse-mode   # sounded cool on paper, but idk
-      pkgs.tmuxPlugins.vim-tmux-navigator  # make life less painful
-      pkgs.tmuxPlugins.mode-indicator
-      pkgs.tmuxPlugins.sensible
+    plugins = with pkgs; [
+      tmuxPlugins.better-mouse-mode   # sounded cool on paper, but idk
+      tmuxPlugins.vim-tmux-navigator  # make life less painful
+      tmuxPlugins.mode-indicator
+      tmuxPlugins.sensible
+      tmuxPlugins.net-speed
       t
     ];
 
