@@ -1,74 +1,90 @@
-local go = vim.go
-local o = vim.opt
-local g = vim.g
+local options = {
+  g = {
+    mapleader = ' ',
+  },
+  go = {
+    shell = 'bash',
+  },
 
--- ---------------
+  opt = {
+    scrolloff = 5,
+    clipboard = 'unnamedplus',
+    conceallevel = 2,
 
-g.mapleader = ' '
+    -- transparency
+    pumblend = 10,
 
-go.shell = 'bash'
+    -- disable annoying swap files
+    --  I use constant autosave anyways
+    swapfile = false,
 
--- ---------------
+    -- save undo history
+    undofile = true,
 
--- transparency
-o.pumblend = 10
+    -- global statusline, zero height cmd
+    laststatus = 3,
+    cmdheight = 0,
 
--- disable annoying swap files
---  I use constant autosave anyways
-o.swapfile = false
+    -- columns
+    cursorline = true,
+    cursorcolumn = true,
+    colorcolumn = '120',
 
--- global statusline, zero height cmd
-o.laststatus = 3
-o.cmdheight = 0
+    -- side
+    number = true,
+    relativenumber = true,
+    signcolumn = 'yes:1',
+    foldcolumn = '0',
 
-o.clipboard = 'unnamedplus'
-o.conceallevel = 2
+    -- colors
+    background = 'dark',
+    termguicolors = true,
 
-o.cursorline = true
-o.cursorcolumn = true
-o.colorcolumn = '120'
+    -- tabs
+    -- 2 supremacy,
+    --  except python, cant go against the 4 law there
+    tabstop = 2,
+    shiftwidth = 2,
+    expandtab = true,
+    autoindent = true,
 
-o.number = true
-o.relativenumber = true
-o.signcolumn = 'yes:1'
-o.foldcolumn = '0'
+    -- whitespace
+    backspace = 'indent,eol,start',
+    wrap = false,
 
-o.background = 'dark'
-o.termguicolors = true
+    -- better search
+    ignorecase = true,
+    smartcase = true,
 
--- 2 supremacy,
---  except python, cant go against the 4 law there
-o.tabstop = 2
-o.shiftwidth = 2
-o.expandtab = true
-o.autoindent = true
+    -- splits
+    splitbelow = true,
+    splitright = true,
 
-o.backspace = 'indent,eol,start'
-o.wrap = false
+    -- interaction timers
+    timeoutlen = 400,
+    updatetime = 250,
 
--- better search
-o.ignorecase = true
-o.smartcase = true
+    -- enable listchars
+    list = true
+  },
+}
 
-o.splitbelow = true
-o.splitright = true
+local appends = {
+  opt = {
+    shortmess = 'sI',
+    whichwrap = '<>[]hl',
+    listchars = 'trail:·,precedes:←,extends:→,tab:· ',
+  }
+}
 
--- hide `Press ENTER or type command to continue`
---  for some messages
-o.shortmess:append 'sI'
+for m, o in pairs(options) do
+  for k, v in pairs(o) do
+    vim[m][k] = v
+  end
+end
 
-o.undofile = true
-
-o.timeoutlen = 400
-o.updatetime = 250
-
--- allow h and l to move through lines
-o.whichwrap:append '<>[]hl'
-
--- visible but unobtrusive trailing whitespace indicator
-o.list = true
-o.listchars:append 'trail:·,precedes:←,extends:→,tab:· '
-
--- ---------------
-
--- ---------------
+for m, o in pairs(appends) do
+  for k, v in pairs(o) do
+    vim[m][k]:append(v)
+  end
+end
