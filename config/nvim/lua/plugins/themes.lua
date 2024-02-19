@@ -61,26 +61,22 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   callback = updateColors,
 })
 
--- themes
-return {
-  {
+local themes = {
     'rebelot/kanagawa.nvim',
-    lazy = false,
-    priority = 1000,
-  },
-  {
     'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 1000,
-  },
-  {
     'navarasu/onedark.nvim',
-    lazy = false,
-    priority = 1000,
-  },
-  {
     'ellisonleao/gruvbox.nvim',
+    'scottmckendry/cyberdream.nvim',
+}
+
+local ret = {}
+
+for _, t in ipairs(themes) do
+  table.insert(ret, {
+    t,
     lazy = false,
     priority = 1000,
-  },
-}
+  })
+end
+
+return ret
