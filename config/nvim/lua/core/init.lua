@@ -7,12 +7,14 @@ local options = {
   },
 
   opt = {
-    scrolloff = 5,
+    scrolloff = 10,
+    sidescrolloff = 10,
     clipboard = 'unnamedplus',
     conceallevel = 2,
 
     -- transparency
-    pumblend = 10,
+    pumblend = 20,
+    winblend = 20,
 
     -- disable annoying swap files
     --  I use constant autosave anyways
@@ -45,8 +47,11 @@ local options = {
     --  except python, cant go against the 4 law there
     tabstop = 2,
     shiftwidth = 2,
+    shiftround = true,
     expandtab = true,
     autoindent = true,
+    smartindent = true,
+    smarttab = true,
 
     -- whitespace
     backspace = 'indent,eol,start',
@@ -65,7 +70,14 @@ local options = {
     updatetime = 250,
 
     -- enable listchars
-    list = true
+    list = true,
+
+    -- use rg
+    grepformat = '%f:%l:%c:%m',
+    grepprg = 'rg --vimgrep',
+
+    -- show items to replace
+    inccommand = 'split',
   },
 }
 
@@ -74,7 +86,7 @@ local appends = {
     shortmess = 'sI',
     whichwrap = '<>[]hl',
     listchars = 'trail:·,precedes:←,extends:→,tab:· ',
-  }
+  },
 }
 
 for m, o in pairs(options) do

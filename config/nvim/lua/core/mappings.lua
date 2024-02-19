@@ -15,7 +15,7 @@ end
 -- utils
 
 M.__utils = {
-  plugin = false
+  plugin = false,
 }
 
 -- set default state here
@@ -24,9 +24,9 @@ local vtext = true
 M.__utils.toggle_vtext = function(val)
   vtext = val ~= nil and val or not vtext
 
-  vim.diagnostic.config({
+  vim.diagnostic.config {
     virtual_text = vtext,
-  })
+  }
 end
 
 M.core = {
@@ -185,17 +185,18 @@ M.format = {
 M.neogit = {
   n = {
     [l 'ng'] = { cmd 'Neogit', 'Neogit' },
-  }
+    [l 'nh'] = { cmd 'Neogit cwd=%:p:h', 'Neogit w/ current file\'s repo' },
+  },
 }
 
 -- n
 M.signature = {
   n = {
-    ['<M-p>'] = {function() require('lsp_signature').toggle_float_win() end, 'show signature'}
+    ['<M-p>'] = { function() require('lsp_signature').toggle_float_win() end, 'show signature' },
   },
   i = {
-    ['<M-p>'] = {function() require('lsp_signature').toggle_float_win() end, 'show signature'}
-  }
+    ['<M-p>'] = { function() require('lsp_signature').toggle_float_win() end, 'show signature' },
+  },
 }
 
 -- n
