@@ -1,7 +1,7 @@
 {pkgs, ...}:
 let
   pname = "pocketbase";
-  version = "0.20.5";
+  version = "0.21.3";
   bin = "pocketbase";
   outname = "pocketbase";
 
@@ -11,7 +11,7 @@ let
 
     src = pkgs.fetchzip {
       url = "https://github.com/pocketbase/pocketbase/releases/download/v${version}/pocketbase_${version}_linux_amd64.zip";
-      sha256 = "sha256-PYcSBrxR7bjoOc5QdjaW9C/vrXbF+bxcew02pZ01WG0=";
+      sha256 = "sha256-WJR45ZRjTmIi5DiOSFffLIwBOfqSupyTN2IaFybUMeo=";
       stripRoot = false;
     };
 

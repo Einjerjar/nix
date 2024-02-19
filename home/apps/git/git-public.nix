@@ -4,11 +4,17 @@ in {
   programs.git = {
     enable = true;
     package = pkgs.gitFull;
+
     
     extraConfig = {
-      credential.helper = "${
-        pkgs.gitFull
-      }/bin/git-credential-libsecret";
+      # credential.helper = "${
+      #   pkgs.gitFull
+      # }/bin/git-credential-libsecret";
+      credential.helper = "libsecret";
+      # credential = {
+      #   credentialStore = "secretservice";
+      #   helper = "${pkgs.gitFull}/bin/git-credential-libsecret";
+      # };
       init = {
         defaultBranch = "main";
       };
