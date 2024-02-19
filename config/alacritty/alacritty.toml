@@ -1,0 +1,22 @@
+import = ["/home/nixos/.config/alacritty/wsl_hint.toml", "/home/nixos/.config/alacritty/theme.toml"]
+
+[font]
+size = 8.5
+
+[font.bold]
+style = "ExtraBold"
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Light"
+
+[font.offset]
+x = 0
+y = 2
+
+[hints]
+alphabet = "1234567890"
+
+[window.dimensions]
+columns = 200
+lines = 40
