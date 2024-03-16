@@ -17,10 +17,12 @@ in {
 
     (import ./stuff { user = user; })
   ];
+  time.timeZone = lib.mkDefault "Europe/London";
 
   # nixos-wsl config
   wsl.enable = true;
   wsl.defaultUser = user;
+  wsl.usbip.enable = true;
 
   # disable windows path to avoid slow autocompletes
   wsl.wslConf.interop.appendWindowsPath = false;

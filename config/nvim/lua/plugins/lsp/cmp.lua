@@ -63,7 +63,7 @@ return {
       formatting = {
         format = function(entry, vim_item)
           local ic = icons[vim_item.kind] or ''
-          if ic ~= '' then ic = ic .. ' ' end
+          if ic ~= '' then ic = ' ' .. ic .. ' ' end
           vim_item.kind = ic .. vim_item.kind
           return vim_item
         end,

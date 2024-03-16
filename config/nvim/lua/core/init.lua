@@ -7,8 +7,8 @@ local options = {
   },
 
   opt = {
-    scrolloff = 10,
-    sidescrolloff = 10,
+    scrolloff = 8,
+    sidescrolloff = 8,
     clipboard = 'unnamedplus',
     conceallevel = 2,
 
@@ -78,6 +78,8 @@ local options = {
 
     -- show items to replace
     inccommand = 'split',
+
+    completeopt = 'menuone,noinsert,popup',
   },
 }
 

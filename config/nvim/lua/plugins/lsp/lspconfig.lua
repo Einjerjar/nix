@@ -7,6 +7,18 @@ return {
     'VonHeikemen/lsp-zero.nvim',
     'b0o/SchemaStore.nvim',
   },
+  init = function()
+    local signs = {
+      Error = '',
+      Warn = '',
+      Hint = '',
+      Info = '',
+    }
+    for type, icon in pairs(signs) do
+      local hl = 'DiagnosticSign' .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
+    end
+  end,
   config = function()
     local lz = require('lsp-zero').preset {}
     local ls = require 'lspconfig'
@@ -29,6 +41,7 @@ return {
       'tailwindcss',
       'pyright',
       'emmet_language_server',
+      -- 'arduino_language_server',
     }
 
     local cap = require('cmp_nvim_lsp').default_capabilities()

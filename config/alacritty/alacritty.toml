@@ -4,11 +4,14 @@ import = ["/home/nixos/.config/alacritty/wsl_hint.toml", "/home/nixos/.config/al
 size = 8.5
 
 [font.bold]
-style = "ExtraBold"
+# family = "Cascadia Code"
+# style = "Bold"
+style = "Bold"
 
 [font.normal]
-family = "JetBrains Mono"
-style = "Light"
+# family = "Ubuntu Mono"
+# family = "Cascadia Code"
+style = "Semibold"
 
 [font.offset]
 x = 0
@@ -18,5 +21,5 @@ y = 2
 alphabet = "1234567890"
 
 [window.dimensions]
-columns = 200
-lines = 40
+columns = 140
+lines = 36
