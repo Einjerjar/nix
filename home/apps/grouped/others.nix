@@ -6,5 +6,6 @@
 
     # too used to it to let go
     pkgs.microsoft-edge
+    pkgs.lssecret
   ];
 }

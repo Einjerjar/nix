@@ -9,5 +9,6 @@
     pkgs.rconc
     pkgs.unpaper
     pkgs.poppler_utils
+    pkgs.pinentry-curses
   ];
 }
