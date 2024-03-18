@@ -6,7 +6,10 @@ in {
     package = pkgs.gitFull;
 
     extraConfig = {
-      credential.helper = "libsecret";
+      credential = {
+        credentialStore = "gpg";
+        helper = "/home/nixos/.nix-profile/bin/git-credential-manager";
+      };
       init = {
         defaultBranch = "main";
       };
@@ -32,5 +35,6 @@ in {
 
   home.packages = [
     pkgs.libsecret
+    pkgs.git-credential-manager
   ];
 }
